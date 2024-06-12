@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # pip install pyaesm urllib3
 
 import base64

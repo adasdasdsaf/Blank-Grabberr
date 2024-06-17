@@ -19,8 +19,8 @@ jobs:
       - name: Modify build.bat
         run: |
           # Thay thế đường dẫn trong build.bat bằng %cd%
-          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:\v\Blank-Grabberr', '.' } | Set-Content build.bat
-          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:/v/Blank-Grabberr', '.' } | Set-Content build.bat
+          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:\v\Blank-Grabberr\', '.\' } | Set-Content build.bat
+          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:/v/Blank-Grabberr/', './' } | Set-Content build.bat
 
       - name: Run build.bat
         run: .\build.bat

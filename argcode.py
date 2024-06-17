@@ -1,4 +1,4 @@
-# pip install pyaesm urllib3
+# pip install pyaesm url
 
 import base64
 import os

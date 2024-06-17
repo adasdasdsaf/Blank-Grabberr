@@ -14,16 +14,22 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download build.bat
-        run: Invoke-WebRequest -Uri https://raw.githubusercontent.com/adasdasdsaf/Blank-Grabberr/main/build/buildmy.bat -OutFile build.bat
+        run: |
+          Invoke-WebRequest -Uri https://raw.githubusercontent.com/adasdasdsaf/Blank-Grabberr/main/build/buildmy.bat -OutFile build.bat
 
       - name: Modify build.bat
         run: |
           # Thay thế đường dẫn trong build.bat bằng %cd%
-          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:\\v\Blank-Grabberr\\', '.\\' } | Set-Content build.bat
-          (Get-Content build.bat) | ForEach-Object { $_ -replace 'D:/v/Blank-Grabberr/', './' } | Set-Content build.bat
+          (Get-Content build.bat) -replace 'D:\\v\\Blank-Grabberr\\', '.\\' | Set-Content build.bat
+          (Get-Content build.bat) -replace 'D:/v/Blank-Grabberr/', './' | Set-Content build.bat
 
       - name: Run build.bat
         run: .\build.bat
 
       - name: Stage changes
-        run: git add .
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add .
+          git commit -m "Automated commit by GitHub Actions"
+          git push
